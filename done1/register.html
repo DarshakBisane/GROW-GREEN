@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Register</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <!-- Shared header + menu -->
+    <header>
+        <span>GreenGrain Marketplace</span>
+        <div class="header-right">
+            <button id="themeToggle" class="small-btn">Theme</button>
+            <button id="logoutBtn" class="small-btn">Logout</button>
+        </div>
+    </header>
+    <nav>
+        <button id="menuBtn" class="menu-btn">Menu ▾</button>
+        <div id="menuOptions" class="menu-options">
+            <button id="homeBtn">Home</button>
+            <button id="userLoginBtn">User Login</button>
+            <button id="adminLoginBtn">Admin Login</button>
+            <button id="uploadBtn">Upload Product</button>
+            <button id="searchBtnNav">Search</button>
+            <button id="directoryBtn">Admin Directory</button>
+        </div>
+    </nav>
+
+    <!-- Page content -->
+    <div class="container">
+        <h2>Create account</h2>
+        <input id="userName" type="text" placeholder="Full name" />
+        <input id="userEmail" type="email" placeholder="Email" />
+        <input id="userPassword" type="password" placeholder="Password" />
+        <button id="registerUser" class="submit">Register</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GreenGrain – Home</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <!-- Shared header + menu -->
+    <header>
+        <span>GreenGrain Marketplace</span>
+        <div class="header-right">
+            <button id="themeToggle" class="small-btn">Theme</button>
+            <button id="logoutBtn" class="small-btn">Logout</button>
+        </div>
+    </header>
+    <nav>
+        <button id="menuBtn" class="menu-btn">Menu ▾</button>
+        <div id="menuOptions" class="menu-options">
+            <button id="homeBtn">Home</button>
+            <button id="userLoginBtn">User Login</button>
+            <button id="adminLoginBtn">Admin Login</button>
+            <button id="uploadBtn">Upload Product</button>
+            <button id="searchBtnNav">Search</button>
+            <button id="directoryBtn">Admin Directory</button>
+        </div>
+    </nav>
+
+    <!-- Page content -->
+    <section class="hero">
+        <h1>Sell and buy farm goods directly</h1>
+        <p>Farmers upload products with certificates; buyers search and verify authenticity.</p>
+        <button id="uploadBtn2" class="cta">Start Uploading</button>
+    </section>
+
+    <div class="container">
+        <h2>Welcome</h2>
+        <p>Use the menu to log in, upload a product with certificate, or search listings.</p>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        const btn = document.getElementById('uploadBtn2');
+        if (btn) btn.onclick = () => window.location.href = 'upload.html';
+    </script>
+</body>
+
+</html>

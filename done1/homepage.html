@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GreenGrain – Home</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        /* Minor extras specific to homepage */
+        
+        .veg-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 14px;
+            margin-top: 18px;
+        }
+        
+        .veg-btn {
+            padding: 16px 14px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0.9);
+            color: #2e7d32;
+            font-weight: 700;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, .15);
+            transition: transform .08s ease, background .2s ease;
+        }
+        
+        .veg-btn:hover {
+            transform: translateY(-2px);
+            background: #ffffff;
+        }
+        
+        .tagline {
+            text-shadow: 0 2px 8px rgba(0, 0, 0, .35);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Shared header + menu (same design used across pages) -->
+    <header>
+        <span>GreenGrain Marketplace</span>
+        <div class="header-right">
+            <button id="themeToggle" class="small-btn">Theme</button>
+            <button id="logoutBtn" class="small-btn">Logout</button>
+        </div>
+    </header>
+    <nav>
+        <button id="menuBtn" class="menu-btn">Menu ▾</button>
+        <div id="menuOptions" class="menu-options">
+            <button id="homeBtn">Home</button>
+            <button id="userLoginBtn">User Login</button>
+            <button id="adminLoginBtn">Admin Login</button>
+            <button id="uploadBtn">Upload Product</button>
+            <button id="searchBtnNav">Search</button>
+            <button id="directoryBtn">Admin Directory</button>
+        </div>
+    </nav>
+
+    <!-- Hero with same background (gren.jpg is already applied by styles.css to body) -->
+    <section class="hero">
+        <h1 class="tagline">Buy fresh vegetables from verified farmers</h1>
+        <p class="tagline">Tap a vegetable to see sellers instantly.</p>
+    </section>
+
+    <div class="container">
+        <h2>Popular vegetables</h2>
+
+        <div class="veg-grid">
+            <button class="veg-btn" data-veg="tomato">Tomato</button>
+            <button class="veg-btn" data-veg="potato">Potato</button>
+            <button class="veg-btn" data-veg="onion">Onion</button>
+            <button class="veg-btn" data-veg="carrot">Carrot</button>
+            <button class="veg-btn" data-veg="cabbage">Cabbage</button>
+            <button class="veg-btn" data-veg="spinach">Spinach</button>
+            <button class="veg-btn" data-veg="cauliflower">Cauliflower</button>
+            <button class="veg-btn" data-veg="brinjal">Brinjal</button>
+        </div>
+
+        <div style="margin-top:22px;">
+            <p>Looking for something else? Use full search.</p>
+            <button id="goSearch" class="submit">Open Search</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // When a veg button is clicked, store the query and jump to search page,
+        // where the script will read and run the search automatically.
+        document.querySelectorAll(".veg-btn").forEach(btn => {
+            btn.addEventListener("click", () => {
+                const veg = (btn.getAttribute("data-veg") || "").toLowerCase();
+                localStorage.setItem("gg_prefillSearch", veg);
+                window.location.href = "search.html";
+            });
+        });
+        const goSearch = document.getElementById("goSearch");
+        if (goSearch) goSearch.onclick = () => window.location.href = "search.html";
+    </script>
+</body>
+
+</html>

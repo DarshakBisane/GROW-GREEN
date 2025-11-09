@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Upload Product</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <!-- Shared header + menu -->
+    <header>
+        <span>GreenGrain Marketplace</span>
+        <div class="header-right">
+            <button id="themeToggle" class="small-btn">Theme</button>
+            <button id="logoutBtn" class="small-btn">Logout</button>
+        </div>
+    </header>
+    <nav>
+        <button id="menuBtn" class="menu-btn">Menu ▾</button>
+        <div id="menuOptions" class="menu-options">
+            <button id="homeBtn">Home</button>
+            <button id="userLoginBtn">User Login</button>
+            <button id="adminLoginBtn">Admin Login</button>
+            <button id="uploadBtn">Upload Product</button>
+            <button id="searchBtnNav">Search</button>
+            <button id="directoryBtn">Admin Directory</button>
+        </div>
+    </nav>
+
+    <!-- Page content -->
+    <div class="container">
+        <h2>Product details</h2>
+        <form id="uploadForm">
+            <input id="name" type="text" placeholder="Farmer name" required />
+            <input id="product" type="text" placeholder="Product (e.g., Wheat)" required />
+            <textarea id="productDetails" placeholder="Product details" required></textarea>
+            <input id="price" type="number" placeholder="Price" required />
+            <input id="address" type="text" placeholder="Address" required />
+            <input id="mobile" type="tel" placeholder="Mobile number" required />
+            <label>Certificate (PDF/JPG/PNG, under 2 MB)</label>
+            <input id="certificate" type="file" accept=".pdf,.jpg,.jpeg,.png" required />
+            <button class="submit" type="submit">Upload</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
